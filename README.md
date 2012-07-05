@@ -1,14 +1,20 @@
 OSQA: THE OPEN SOURCE Q&A SYSTEM 
+================================
 
-## Deploying to Stackato
+Deploying to Stackato
+---------------------
 
-    stackato push -n
+    $ git clone git://github.com/Stackato-Apps/OSQA.git
+    $ cd OSQA
+    $ stackato push -n
 
-## Learn More
+Learn More
+----------
 
     http://www.osqa.net/learn-more/
 
-## License
+License
+-------
 
 OSQA is provided under the terms of the GNU Public License, version 3 (GPLv3).
 
