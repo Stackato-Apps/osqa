@@ -13,10 +13,8 @@ hooks:
 
 requirements:
   pypm:
-    - django
-    - django-rosetta
+    - django<=1.3.999
     - south
-    - django-debug-toolbar
     - markdown
     - html5lib
     - python-openid
