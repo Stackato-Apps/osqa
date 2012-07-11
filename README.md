@@ -8,6 +8,8 @@ Deploying to Stackato
     $ cd OSQA
     $ stackato push -n
 
+The first user created will be the administrator.
+
 Learn More
 ----------
 
