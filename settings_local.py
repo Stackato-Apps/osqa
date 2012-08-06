@@ -25,7 +25,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 
 import json
 vcap_services = json.loads(os.environ['VCAP_SERVICES'])
-srv = vcap_services['mysql-5.5'][0]
+srv = vcap_services['mysql'][0]
 cred = srv['credentials']
 DATABASES = {
     'default': {
