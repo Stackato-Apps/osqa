@@ -1,16 +1,12 @@
 name: osqa
-
 framework:
   type: python
   runtime: python27
-
 mem: 128M
-
 hooks:
   post-staging:
     - python manage.py syncdb --all
     - python manage.py migrate forum --fake
-
 requirements:
   pypm:
     - django<=1.3.999
@@ -19,9 +15,8 @@ requirements:
     - html5lib
     - python-openid
     - mysql-python
-
+min_version:
+  client: 1.4.3
 services:
-  mysql-osqa : mysql
-
+  ${name}-db: mysql
 ignores: [".git","tmp"]
-
