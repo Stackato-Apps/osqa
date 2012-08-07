@@ -10,6 +10,13 @@ Deploying to Stackato
 
 The first user created will be the administrator.
 
+Outgoing Email Support
+----------------------
+
+An external accessible email server is required for full functionality 
+of this application. Please visit the admin settings page after 
+installation for more details on configuration.
+
 Learn More
 ----------
 
