@@ -5,8 +5,8 @@ framework:
 mem: 128M
 hooks:
   post-staging:
-    - python manage.py syncdb --all
-    - python manage.py migrate forum --fake
+    - python manage.py syncdb --all --noinput
+    - python manage.py migrate forum --fake --noinput
 requirements:
   pypm:
     - django<=1.3.999
