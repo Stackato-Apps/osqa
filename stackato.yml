@@ -15,6 +15,7 @@ requirements:
     - html5lib
     - python-openid
     - mysql-python
+    - six
 min_version:
   client: 1.4.3
 services:
