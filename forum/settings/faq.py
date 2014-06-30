@@ -1,7 +1,8 @@
 from base import Setting, SettingSet
 from django.forms.widgets import Textarea
+from django.utils.translation import ugettext_lazy as _
 
-FAQ_SET = SettingSet('faq', 'FAQ page', "Define the text in the about page. You can use markdown and some basic html tags.", 2000, True)
+FAQ_SET = SettingSet('faq', _('FAQ page'), _("Define the text in the about page. You can use markdown and some basic html tags."), 2000, True)
 
 FAQ_PAGE_TEXT = Setting('FAQ_PAGE_TEXT',
 u"""
@@ -74,6 +75,6 @@ Allowing experienced members of this community to curate the questions and answe
 
 Please ask your question, help make our community better!
 """, FAQ_SET, dict(
-label = "FAQ page text",
-help_text = " The faq page. ",
+label = _("FAQ page text"),
+help_text = _("The faq page."),
 widget=Textarea(attrs={'rows': '25'})))

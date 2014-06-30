@@ -4,7 +4,7 @@
 {% load extra_tags %}
 
 {% block title %}{% spaceless %}{% trans "Login" %}{% endspaceless %}{% endblock %}
-        
+
 {% block forejs %}
     <link rel="stylesheet" type="text/css" media="screen" href="{% media "/media/style/auth.css" %}"/>
     {% for provider in all_providers %}
@@ -21,13 +21,13 @@
         {% endif %}
     {% endfor %}
     <div class="headNormal">
-	    {% trans "User login" %}
+        {% trans "User login" %}
     </div>
     {% if msg %}
         <p class="error">{{ msg }}</p>
     {% endif %}
     {% for provider in top_stackitem_providers %}
-        <form class="signin_form" method="POST" action="{% url auth_provider_signin provider=provider.id %}" accept-charset="utf-8">
+        <form class="signin_form" method="POST" action="{% url "auth_provider_signin" provider=provider.id %}" accept-charset="utf-8">
             {% csrf_token %}
             {% include provider.stack_item_template %}
             <input type="hidden" class="validate_email" name="validate_email" value="yes" />
@@ -53,7 +53,7 @@
             <div class="provider_logo big" name="{{ provider.id }}">
                 <div class="inner">
                     {% ifequal provider.type "DIRECT" %}
-                        <a class="provider_direct" href="{% url auth_provider_signin provider=provider.id %}">
+                        <a class="provider_direct" href="{% url "auth_provider_signin" provider=provider.id %}">
                             <img src="{% media provider.icon %}" />
                         </a>
                     {% endifequal %}
@@ -72,7 +72,7 @@
             <div class="provider_logo small" name="{{ provider.id }}">
                 <div class="inner">
                     {% ifequal provider.type "DIRECT" %}
-                        <a class="provider_direct" href="{% url auth_provider_signin provider=provider.id %}">
+                        <a class="provider_direct" href="{% url "auth_provider_signin" provider=provider.id %}">
                             <img src="{% media provider.icon %}" />
                         </a>
                     {% endifequal %}
@@ -93,7 +93,7 @@
     </form>
     {% for provider in stackitem_providers %}
         <h3 class="or_label">{% trans 'Or...' %}</h3>
-        <form class="signin_form" method="POST" action="{% url auth_provider_signin provider=provider.id %}" accept-charset="utf-8">
+        <form class="signin_form" method="POST" action="{% url "auth_provider_signin" provider=provider.id %}" accept-charset="utf-8">
             {% csrf_token %}
             {% include provider.stack_item_template %}
             <input type="hidden" class="validate_email" name="validate_email" value="yes" />
@@ -103,7 +103,7 @@
     <form name="signin_form" id="dummy_form_unused" class="signin_form" method="POST" action="">
         {% csrf_token %}
         <fieldset>
-            {% trans 'Click' %} <a href="{% url auth_request_tempsignin %}">{% trans 'here' %}</a> {% trans "if you're having trouble signing in." %}
+            {% trans 'Click' %} <a href="{% url "auth_request_tempsignin" %}">{% trans 'here' %}</a> {% trans "if you're having trouble signing in." %}
         </fieldset>
     </form>
     <script type="text/html" id="simple_form_template">
@@ -118,7 +118,7 @@
     </script>
     <script type="text/javascript">
         $(function() {
-            var signin_url = "{% url auth_provider_signin provider='PROVIDER' %}";
+            var signin_url = "{% url "auth_provider_signin" provider='PROVIDER' %}";
 
             function set_validate_email() {
                 var validate = $('#validate_email').attr('checked') ? 'yes' : 'no';
@@ -167,16 +167,16 @@
     <h3 class="subtitle">{% trans "Why use OpenID?" %}</h3>
     <ul class="list-item">
         <li>
-		{% trans "with openid it is easier" %}
+            {% trans "with openid it is easier" %}
         </li>
         <li>
-		{% trans "reuse openid" %}
+            {% trans "reuse openid" %}
         </li>
         <li>
-		{% trans "openid is widely adopted" %}
+            {% trans "openid is widely adopted" %}
         </li>
         <li>
-		{% trans "openid is supported open standard" %}
+            {% trans "openid is supported open standard" %}
         </li>
 
     </ul>

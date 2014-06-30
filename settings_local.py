@@ -1,5 +1,6 @@
 # encoding:utf-8
 import os.path
+import json
 
 SITE_SRC_ROOT = os.path.dirname(__file__)
 LOG_FILENAME = 'django.osqa.log'
@@ -22,8 +23,9 @@ DEBUG_TOOLBAR_CONFIG = {
 }
 TEMPLATE_DEBUG = DEBUG
 INTERNAL_IPS = ('127.0.0.1',)
+host = json.loads(os.environ['VCAP_APPLICATION'])['uris'][0]
+ALLOWED_HOSTS = (host,)
 
-import json
 vcap_services = json.loads(os.environ['VCAP_SERVICES'])
 srv = vcap_services['mysql'][0]
 cred = srv['credentials']
