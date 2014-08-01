@@ -1,8 +1,0 @@
-name: osqa
-mem: 128M
-hooks:
-  post-staging:
-    - python manage.py syncdb --all --noinput
-    - python manage.py migrate forum --fake --noinput
-services:
-  ${name}-db: mysql
