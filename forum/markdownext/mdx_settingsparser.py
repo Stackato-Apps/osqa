@@ -42,5 +42,5 @@ class SettingsPre(Preprocessor):
         return new_lines
 
 
-def makeExtension(configs=None) :
+def makeExtension(configs={}) :
     return SettingsExtension(configs=configs)

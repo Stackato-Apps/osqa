@@ -1,4 +1,4 @@
-markdown==2.4.1
+markdown
 html5lib
 python-openid
 South
