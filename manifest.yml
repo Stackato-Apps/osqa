@@ -1,11 +1,7 @@
 applications:
 - name: osqa
+  docker_image: stackatoapps/osqa:latest
   mem: 128M
   services:
     ${name}-db:
       type: mysql
-  stackato:
-    hooks:
-      post-staging:
-      - python manage.py syncdb --all --noinput
-      - python manage.py migrate forum --fake --noinput
