@@ -1,11 +1,9 @@
 OSQA: THE OPEN SOURCE Q&A SYSTEM 
 ================================
 
-Deploying to Stackato
----------------------
+Deploying to HPE Helion Stackato
+--------------------------------
 
-    $ git clone git://github.com/Stackato-Apps/OSQA.git
-    $ cd OSQA
     $ stackato push -n
 
 The first user created will be the administrator.
