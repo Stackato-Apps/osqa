@@ -79,4 +79,4 @@ LANGUAGE_CODE = 'en'
 
 OSQA_DEFAULT_SKIN = 'default'
 
-DISABLED_MODULES = ['books', 'recaptcha', 'project_badges']
+DISABLED_MODULES = ['books', 'recaptcha', 'project_badges', 'stats']

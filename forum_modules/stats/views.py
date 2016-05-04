@@ -5,16 +5,16 @@ from base import check_for_updates
 
 from forum.views.admin import admin_tools_page, admin_page
 
-@admin_tools_page(_('updater'), _('Update Checker'))
-def updater_index(request):
+@admin_tools_page(_('stats'), _('Stats Module'))
+def stats_index(request):
     return (
-        'modules/updates/index.html',
+        'modules/stats/index.html',
         {
 
         },
     )
 
-def updater_check(request):
+def stats_check(request):
     update_status = check_for_updates()
 
     return HttpResponse(update_status, mimetype='text/html')
